@@ -42,7 +42,8 @@ module ActiveAdmin
       
       def active_admin_config=(config)
         @active_admin_config = config
-        defaults :resource_class => config.resource
+        defaults  :resource_class => config.resource,
+                  :route_prefix => config.route_prefix
       end
 
       def set_page_config(page, config)
