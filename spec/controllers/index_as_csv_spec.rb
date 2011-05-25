@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe_with_render "Index as CSV" do
+describe_with_render Admin::PostsController do
 
   before :all do
     load_defaults!
