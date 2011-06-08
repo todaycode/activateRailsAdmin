@@ -75,6 +75,11 @@ module ActiveAdmin
     def menu_item_name
       @menu_item_name ||= plural_resource_name
     end
+    
+    # Returns the items priority for altering the default sort order
+    def menu_item_priority
+      @menu_options[:priority] || 10
+    end
 
     def clear_member_actions!
       @member_actions = []
