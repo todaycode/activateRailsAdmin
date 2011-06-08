@@ -80,6 +80,11 @@ module ActiveAdmin
     def menu_item_priority
       @menu_options[:priority] || 10
     end
+    
+    # Returns a proc for deciding whether to display the menu item or not in the view
+    def menu_item_display_if
+      @menu_options[:if] || proc { true }
+    end
 
     def clear_member_actions!
       @member_actions = []
