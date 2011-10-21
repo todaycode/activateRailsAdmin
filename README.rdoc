@@ -11,6 +11,7 @@ to implement beautiful and elegant interfaces with very little effort.
 * Guides: http://activeadmin.info/documentation.html
 * Live demo: http://demo.activeadmin.info/admin
 * Website: http://www.activeadmin.info
+* Want to Contribute? Read the Guide: https://github.com/gregbell/active_admin/blob/master/CONTRIBUTING.md
 
 
 == Goals
