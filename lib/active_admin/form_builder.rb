@@ -97,6 +97,11 @@ module ActiveAdmin
       end
       form_buffers.last << content.html_safe
     end
+    
+    def semantic_errors(*args)
+      content = with_new_form_buffer { super }
+      form_buffers.last << content.html_safe unless content.nil?
+    end
 
     private
 
