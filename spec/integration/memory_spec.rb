@@ -28,7 +28,7 @@ describe "Memory Leak" do
       load_defaults!
       GC.start
 
-      count_instances_of(klass).should == count
+      count_instances_of(klass).should <= count
     end
   end
 
