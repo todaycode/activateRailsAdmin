@@ -98,6 +98,7 @@ module ActiveAdmin
       end
     end
 
+<<<<<<< HEAD
     describe "route names" do
       let(:config){ ActiveAdmin.register Category }
       it "should return the route prefix" do
@@ -136,6 +137,8 @@ module ActiveAdmin
       end
     end
 
+=======
+>>>>>>> 47e503d2 (Extract routes spec into their own spec file)
     describe "scoping" do
       let(:controller){ Admin::CategoriesController.new }
       let(:begin_of_association_chain){ controller.send(:begin_of_association_chain) }
