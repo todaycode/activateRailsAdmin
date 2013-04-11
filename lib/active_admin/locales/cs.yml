@@ -21,7 +21,12 @@ cs:
     download: "Stáhnout:"
     has_many_new: "Přidat nový"
     has_many_delete: "Odstranit"
+<<<<<<< HEAD
     filter: "Filtr"
+=======
+    has_many_remove: "Odstranit"
+    filter: "Filtrovat"
+>>>>>>> e8d27766 (Add i18n for has_many_remove label)
     clear_filters: "Vyčistit filtry"
     search_field: "%{field}"
     equal_to: "Přesně"

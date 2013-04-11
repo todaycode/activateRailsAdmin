@@ -28,7 +28,58 @@ module ActiveAdmin
   autoload :BelongsTo,            'active_admin/belongs_to'
   autoload :Callbacks,            'active_admin/callbacks'
 
+<<<<<<< HEAD
   extend AssetRegistration
+=======
+  autoload :VERSION,                  'active_admin/version'
+  autoload :Application,              'active_admin/application'
+  autoload :AssetRegistration,        'active_admin/asset_registration'
+  autoload :Authorization,            'active_admin/authorization_adapter'
+  autoload :AuthorizationAdapter,     'active_admin/authorization_adapter'
+  autoload :Breadcrumbs,              'active_admin/breadcrumbs'
+  autoload :CanCanAdapter,            'active_admin/cancan_adapter'
+  autoload :Callbacks,                'active_admin/callbacks'
+  autoload :Component,                'active_admin/component'
+  autoload :BaseController,           'active_admin/base_controller'
+  autoload :ControllerAction,         'active_admin/controller_action'
+  autoload :CSVBuilder,               'active_admin/csv_builder'
+  autoload :Dashboards,               'active_admin/dashboards'
+  autoload :Deprecation,              'active_admin/deprecation'
+  autoload :Devise,                   'active_admin/devise'
+  autoload :DSL,                      'active_admin/dsl'
+  autoload :Event,                    'active_admin/event'
+  autoload :FormBuilder,              'active_admin/form_builder'
+  autoload :Inputs,                   'active_admin/inputs'
+  autoload :Iconic,                   'active_admin/iconic'
+  autoload :Menu,                     'active_admin/menu'
+  autoload :MenuCollection,           'active_admin/menu_collection'
+  autoload :MenuItem,                 'active_admin/menu_item'
+  autoload :Namespace,                'active_admin/namespace'
+  autoload :Page,                     'active_admin/page'
+  autoload :PagePresenter,            'active_admin/page_presenter'
+  autoload :PageController,           'active_admin/page_controller'
+  autoload :PageDSL,                  'active_admin/page_dsl'
+  autoload :Reloader,                 'active_admin/reloader'
+  autoload :Resource,                 'active_admin/resource'
+  autoload :ResourceController,       'active_admin/resource_controller'
+  autoload :ResourceDSL,              'active_admin/resource_dsl'
+  autoload :Scope,                    'active_admin/scope'
+  autoload :ScopeChain,               'active_admin/helpers/scope_chain'
+  autoload :SidebarSection,           'active_admin/sidebar_section'
+  autoload :TableBuilder,             'active_admin/table_builder'
+  autoload :ViewFactory,              'active_admin/view_factory'
+  autoload :ViewHelpers,              'active_admin/view_helpers'
+  autoload :Views,                    'active_admin/views'
+
+  class Railtie < ::Rails::Railtie
+    config.after_initialize do
+      # Add load paths straight to I18n, so engines and application can overwrite it.
+      require 'active_support/i18n'
+      I18n.load_path.unshift *Dir[File.expand_path('../active_admin/locales/*.yml', __FILE__)]
+      I18n.reload!
+    end
+  end
+>>>>>>> 0f0bd9e6 (Fix https://github.com/gregbell/active_admin/issues/1999: translation_missing error)
 
   # The default namespace to put controllers and routes inside. Set this
   # in config/initializers/active_admin.rb using:

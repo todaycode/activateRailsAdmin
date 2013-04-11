@@ -1,6 +1,22 @@
+<<<<<<< HEAD
+=======
+require 'active_admin/resource/action_items'
+require 'active_admin/resource/controllers'
+require 'active_admin/resource/menu'
+require 'active_admin/resource/page_presenters'
+require 'active_admin/resource/pagination'
+require 'active_admin/resource/routes'
+require 'active_admin/resource/naming'
+require 'active_admin/resource/scopes'
+require 'active_admin/resource/scope_to'
+require 'active_admin/resource/sidebars'
+require 'active_admin/resource/belongs_to'
+
+>>>>>>> b7fa1076 (Resolves #587 adding :if & :unless proc arguments to scope_to() method)
 module ActiveAdmin
   class Resource
 
+<<<<<<< HEAD
     attr_reader :namespace, :resource, :page_configs, :member_actions, :collection_actions,
                 :parent_menu_item_name
     attr_accessor :resource_name, :sort_order, :scope_to, :scope_to_association_method,
@@ -43,6 +59,64 @@ module ActiveAdmin
     def plural_resource_name
       @plural_resource_name ||= resource_name.pluralize
     end
+=======
+    # Event dispatched when a new resource is registered
+    RegisterEvent = 'active_admin.resource.register'.freeze
+
+    # The namespace this config belongs to
+    attr_reader :namespace
+
+    # The name of the resource class
+    attr_reader :resource_class_name
+
+    # An array of member actions defined for this resource
+    attr_reader :member_actions
+
+    # An array of collection actions defined for this resource
+    attr_reader :collection_actions
+
+    # The default sort order to use in the controller
+    attr_accessor :sort_order
+
+    # Set the configuration for the CSV
+    attr_writer :csv_builder
+    
+    # Set breadcrumb builder
+    attr_accessor :breadcrumb
+
+    # Store a reference to the DSL so that we can dereference it during garbage collection.
+    attr_accessor :dsl
+
+    # The string identifying a class to decorate our resource with for the view.
+    # nil to not decorate.
+    attr_accessor :decorator_class_name
+
+    module Base
+      def initialize(namespace, resource_class, options = {})
+        @namespace = namespace
+        @resource_class_name = "::#{resource_class.name}"
+        @options = default_options.merge(options)
+        @sort_order = @options[:sort_order]
+        @member_actions, @collection_actions = [], []
+      end
+    end
+
+    include MethodOrProcHelper
+
+    include Base
+    include ActionItems
+    include Authorization
+    include Controllers
+    include Menu
+    include Naming
+    include PagePresenters
+    include Pagination
+    include Scopes
+    include ScopeTo
+    include Sidebars
+    include Menu
+    include Routes
+>>>>>>> b7fa1076 (Resolves #587 adding :if & :unless proc arguments to scope_to() method)
 
     # Returns a properly formatted controller name for this
     # resource within its namespace

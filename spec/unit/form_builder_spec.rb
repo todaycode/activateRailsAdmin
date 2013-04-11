@@ -205,12 +205,98 @@ describe_with_render ActiveAdmin::FormBuilder do
   end
 
 
+<<<<<<< HEAD
   { 
     "input :title, :as => :string"        => /id\=\"post_title\"/,
     "input :title, :as => :text"          => /id\=\"post_title\"/,
     "input :created_at, :as => :time"     => /id\=\"post_created_at_2i\"/,
     "input :created_at, :as => :datetime" => /id\=\"post_created_at_2i\"/,
     "input :created_at, :as => :date"     => /id\=\"post_created_at_2i\"/,
+=======
+      it "should add a link to add new nested records" do
+        Capybara.string(body).should have_css(".has_many > fieldset > ol > li > a", :class => "button", :href => "#", :content => "Add New Post")
+      end
+    end
+
+    describe "with complex block" do
+      let :body do
+        build_form({:url => '/categories'}, Category.new) do |f|
+          f.object.posts.build
+          f.has_many :posts do |p,i|
+            p.input :title, :label => "Title #{i}"
+          end
+        end
+      end
+
+      it "should accept a block with a second argument" do
+        body.should have_tag("label", "Title 1")
+      end
+    end
+
+    describe "with allow destroy" do
+      context "with an existing post" do
+        let :body do
+          build_form({:url => '/categories'}, Category.new) do |f|
+            f.object.posts.build.stub!(:new_record? => false)
+            f.has_many :posts, :allow_destroy => true do |p|
+              p.input :title
+            end
+          end
+        end
+
+        it "should include a boolean field for _destroy" do
+          body.should have_tag("input", :attributes => {:name => "category[posts_attributes][0][_destroy]"})
+        end
+
+        it "should have a check box with 'Remove' as its label" do
+          body.should have_tag("label", :attributes => {:for => "category_posts_attributes_0__destroy"}, :content => "Remove")
+        end
+
+        it "should wrap the destroy field in an li with class 'has_many_remove'" do
+          Capybara.string(body).should have_css(".has_many > fieldset > ol > li.has_many_remove > input")
+        end
+      end
+
+      context "with a new post" do
+        let :body do
+          build_form({:url => '/categories'}, Category.new) do |f|
+            f.object.posts.build
+            f.has_many :posts, :allow_destroy => true do |p|
+              p.input :title
+            end
+          end
+        end
+
+        it "should not have a boolean field for _destroy" do
+          body.should_not have_tag("input", :attributes => {:name => "category[posts_attributes][0][_destroy]"})
+        end
+
+        it "should not have a check box with 'Remove' as its label" do
+          body.should_not have_tag("label", :attributes => {:for => "category_posts_attributes_0__destroy"}, :content => "Remove")
+        end
+      end
+    end
+
+    pending "should render the block if it returns nil" do
+      body = build_form({:url => '/categories'}, Category.new) do |f|
+        f.object.posts.build
+        f.has_many :posts do |p|
+          p.input :title
+          nil
+        end
+      end
+
+      body.should have_tag("input", :attributes => {:name => "category[posts_attributes][0][title]"})
+    end
+  end
+
+  {
+    "input :title, :as => :string"               => /id\=\"post_title\"/,
+    "input :title, :as => :text"                 => /id\=\"post_title\"/,
+    "input :created_at, :as => :time_select"     => /id\=\"post_created_at_2i\"/,
+    "input :created_at, :as => :datetime_select" => /id\=\"post_created_at_2i\"/,
+    "input :created_at, :as => :date_select"     => /id\=\"post_created_at_2i\"/,
+>>>>>>> 30186732 (Add :allow_destroy option to has_many forms)
   }.each do |source, regex|
    it "should properly buffer #{source}" do
      build_form do |f|

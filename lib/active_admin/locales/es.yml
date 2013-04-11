@@ -16,6 +16,7 @@ es:
     download: "Descargar:"
     has_many_new: "Agregar nuevo %{model}"
     has_many_delete: "Eliminar"
+    has_many_remove: "Quitar"
     filter: "Filtrar"
     clear_filters: "Quitar Filtros"
     search_field: "Buscar %{field}"

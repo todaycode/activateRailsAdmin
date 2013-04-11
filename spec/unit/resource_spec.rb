@@ -165,6 +165,7 @@ module ActiveAdmin
         end
       end
 
+<<<<<<< HEAD
       context "when not using a block or symbol" do
         before do
           ActiveAdmin.register Category do
@@ -178,6 +179,8 @@ module ActiveAdmin
         end
       end
 
+=======
+>>>>>>> b7fa1076 (Resolves #587 adding :if & :unless proc arguments to scope_to() method)
       describe "getting the method for the association chain" do
         context "when a simple registration" do
           before do
