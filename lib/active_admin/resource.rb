@@ -153,6 +153,7 @@ module ActiveAdmin
       @parent_menu_item_name = options[:parent]
     end
 
+<<<<<<< HEAD
     # Returns the name to be displayed in the menu for this resource
     def menu_item_name
       @menu_item_name ||= plural_resource_name
@@ -168,6 +169,9 @@ module ActiveAdmin
       @menu_options[:if] || proc { true }
     end
 
+=======
+    # Clears all the member actions this resource knows about
+>>>>>>> 7909a8cf (route_collection_path and route_instance_path both return the path as a String)
     def clear_member_actions!
       @member_actions = []
     end
