@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper') 
+=======
+require 'spec_helper'
+require File.expand_path('config_shared_examples', File.dirname(__FILE__))
+>>>>>>> 960a08bf (whitespace cleanup)
 
 module ActiveAdmin
   describe Resource do

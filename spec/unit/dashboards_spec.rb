@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper') 
+=======
+require 'spec_helper'
+>>>>>>> 960a08bf (whitespace cleanup)
 
 describe ActiveAdmin::Dashboards do
 

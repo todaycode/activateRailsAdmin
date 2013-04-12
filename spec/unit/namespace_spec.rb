@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper') 
+=======
+require 'spec_helper'
+>>>>>>> 960a08bf (whitespace cleanup)
 
 describe ActiveAdmin::Namespace do
 
@@ -100,6 +104,7 @@ describe ActiveAdmin::Namespace do
         end
       end
 
+<<<<<<< HEAD
       describe "disabling the menu" do
         before do
           namespace.register Category do
@@ -110,6 +115,18 @@ describe ActiveAdmin::Namespace do
         it "should not create a menu item" do
           namespace.menu["Category"].should be_nil
         end
+=======
+      namespace.fetch_menu(:test)["menu item"].should_not be_nil
+    end
+  end
+
+  describe "utility navigation" do
+    let(:namespace){ ActiveAdmin::Namespace.new(application, :admin) }
+    let(:menu) do
+      namespace.build_menu :utility_navigation do |menu|
+        menu.add :label => "ActiveAdmin.info", :url => "http://www.activeadmin.info", :html_options => { :target => :blank }
+        namespace.add_logout_button_to_menu menu, 1, :class => "matt"
+>>>>>>> 960a08bf (whitespace cleanup)
       end
     end
 

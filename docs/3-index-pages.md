@@ -78,6 +78,7 @@ You can turn off sorting on any column by passing false:
 The entire index block is rendered within the context of the view, so you can
 easily do things that show or hide columns based on the current context.
 
+<<<<<<< HEAD
 For example, if you were using CanCan:
 
     index do
@@ -121,6 +122,11 @@ resource.
           simple_format product.description
         end
       end
+=======
+    index :as => ActiveAdmin::Views::IndexAsTable do
+      column :image_title
+      default_actions
+>>>>>>> 960a08bf (whitespace cleanup)
     end
 
 ## Index Filters

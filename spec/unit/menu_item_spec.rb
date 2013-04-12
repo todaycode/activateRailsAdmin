@@ -66,6 +66,7 @@ module ActiveAdmin
       it "should give access to the menu item as an array" do
         item['Blog'].name.should == 'Blog'
       end
+<<<<<<< HEAD
       
       it "should sort items based on priority and name" do    
         item.children[0].name.should == 'Users'
@@ -73,6 +74,15 @@ module ActiveAdmin
         item.children[2].name.should == 'Blog'
         item.children[3].name.should == 'Cars'
         item.children[4].name.should == 'Analytics'
+=======
+
+      it "should sort items based on priority and name" do
+        item.items[0].label.should == 'Users'
+        item.items[1].label.should == 'Settings'
+        item.items[2].label.should == 'Blog'
+        item.items[3].label.should == 'Cars'
+        item.items[4].label.should == 'Analytics'
+>>>>>>> 960a08bf (whitespace cleanup)
       end
       
       it "children should hold a reference to their parent" do
@@ -104,13 +114,18 @@ module ActiveAdmin
       
       context "with no parent" do
         it "should return an empty array" do
-         item.ancestors.should == [] 
+         item.ancestors.should == []
         end
       end
       
       context "with one parent" do
+<<<<<<< HEAD
         let(:sub_item) do 
           item.add "Create New", "/blog/new"
+=======
+        let(:sub_item) do
+          item.add :label => "Create New"
+>>>>>>> 960a08bf (whitespace cleanup)
           item["Create New"]
         end
         it "should return an array with the parent" do

@@ -2,6 +2,15 @@ require 'meta_search'
 require 'devise'
 require 'will_paginate'
 require 'sass'
+<<<<<<< HEAD
+=======
+require 'inherited_resources'
+require 'jquery-rails'
+require 'arbre'
+require 'active_admin/dependency_checker'
+require 'active_admin/sass/helpers'
+require 'active_admin/engine'
+>>>>>>> 960a08bf (whitespace cleanup)
 
 module ActiveAdmin
   
@@ -161,6 +170,7 @@ module ActiveAdmin
       @@loaded
     end
 
+<<<<<<< HEAD
     # Removes all the controllers that were defined by registering
     # resources for administration.
     #
@@ -170,6 +180,13 @@ module ActiveAdmin
       namespaces.values.each{|namespace| namespace.unload! }
       @@loaded = false
     end
+=======
+    # Migration MoveAdminNotesToComments generated with version 0.2.2 might reference
+    # to ActiveAdmin.default_namespace.
+    delegate :default_namespace, :to => :application
+    ActiveAdmin::Deprecation.deprecate self, :default_namespace,
+      "ActiveAdmin.default_namespace is deprecated. Please use ActiveAdmin.application.default_namespace"
+>>>>>>> 960a08bf (whitespace cleanup)
 
     # Loads all of the ruby files that are within the load path of
     # ActiveAdmin.load_paths. This should load all of the administration

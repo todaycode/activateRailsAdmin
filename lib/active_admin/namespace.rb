@@ -1,4 +1,32 @@
 module ActiveAdmin
+<<<<<<< HEAD
+=======
+
+  class ResourceMismatchError < StandardError; end
+
+  # Namespaces are the basic organizing principle for resources within Active Admin
+  #
+  # Each resource is registered into a namespace which defines:
+  #   * the namespaceing for routing
+  #   * the module to namespace controllers
+  #   * the menu which gets displayed (other resources in the same namespace)
+  #
+  # For example:
+  #
+  #   ActiveAdmin.register Post, :namespace => :admin
+  #
+  # Will register the Post model into the "admin" namespace. This will namespace the
+  # urls for the resource to "/admin/posts" and will set the controller to
+  # Admin::PostsController
+  #
+  # You can also register to the "root" namespace, which is to say no namespace at all.
+  #
+  #   ActiveAdmin.register Post, :namespace => false
+  #
+  # This will register the resource to an instantiated namespace called :root. The
+  # resource will be accessible from "/posts" and the controller will be PostsController.
+  #
+>>>>>>> 960a08bf (whitespace cleanup)
   class Namespace
 
     attr_reader :resources, :name, :menu
@@ -9,10 +37,18 @@ module ActiveAdmin
       @menu = Menu.new
     end
 
+<<<<<<< HEAD
     def register(resource, options = {}, &block)
       # Init and store the resource
       config = Resource.new(self, resource, options)
       @resources[config.camelized_resource_name] = config
+=======
+    # Register a resource into this namespace. The preffered method to access this is to
+    # use the global registration ActiveAdmin.register which delegates to the proper
+    # namespace instance.
+    def register(resource_class, options = {}, &block)
+      config = find_or_build_resource(resource_class, options)
+>>>>>>> 960a08bf (whitespace cleanup)
 
       # Register the resource
       register_module unless root?
@@ -30,7 +66,7 @@ module ActiveAdmin
     # Returns the name of the module if required. Will be nil if none
     # is required.
     #
-    # eg: 
+    # eg:
     #   Namespace.new(:admin).module_name # => 'Admin'
     #   Namespace.new(:root).module_name # => nil
     #
@@ -54,6 +90,53 @@ module ActiveAdmin
 
     protected
 
+<<<<<<< HEAD
+=======
+    def build_menu_collection
+      @menus = MenuCollection.new
+
+      @menus.on_build do |menus|
+        # Support for deprecated dashboards...
+        Dashboards.add_to_menu(self, menus.menu(DEFAULT_MENU))
+
+        # Build the default utility navigation
+        build_default_utility_nav
+
+        resources.each do |resource|
+          resource.add_to_menu(@menus)
+        end
+      end
+    end
+
+    # Builds the default utility navigation in top right header with current user & logout button
+    def build_default_utility_nav
+      return if @menus.exists? :utility_navigation
+      @menus.menu :utility_navigation do |menu|
+        menu.add  :label  => proc{ display_name current_active_admin_user },
+                  :url    => '#',
+                  :id     => 'current_user',
+                  :if     => proc{ current_active_admin_user? }
+
+        add_logout_button_to_menu menu
+      end
+    end
+
+    # Either returns an existing Resource instance or builds a new
+    # one for the resource and options
+    def find_or_build_resource(resource_class, options)
+      resources.add Resource.new(self, resource_class, options)
+    end
+
+    def build_page(name, options)
+      resources.add Page.new(self, name, options)
+    end
+
+    def register_page_controller(config)
+      eval "class ::#{config.controller_name} < ActiveAdmin::PageController; end"
+      config.controller.active_admin_config = config
+    end
+
+>>>>>>> 960a08bf (whitespace cleanup)
     def unload_resources!
       resources.each do |name, config|
         parent = (module_name || 'Object').constantize

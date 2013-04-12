@@ -1,8 +1,13 @@
-lib/**/*.rb 
+lib/**/*.rb
 --protected
 --no-private
 --asset docs/images:images
 -
+<<<<<<< HEAD
 README.rdoc 
 CHANGELOG.rdoc
+=======
+README.rdoc
+CHANGELOG.md
+>>>>>>> 960a08bf (whitespace cleanup)
 docs/**/*.md

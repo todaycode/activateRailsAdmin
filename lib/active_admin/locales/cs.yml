@@ -48,3 +48,44 @@ cs:
     blank_slate:
       content: "Zatím zde není žádný obsah."
       link: "Vytvořit"
+<<<<<<< HEAD
+=======
+    batch_actions:
+      button_label: "Hromadné akce"
+      delete_confirmation: "Jste si jisti, že chcete odstranit tyto %{plural_model}?"
+      succesfully_destroyed:
+        one: "Úspěšně smazán %{model}"
+        few: "Úspěšně smazány %{count} %{plural_model}"
+        other: "Úspěšně smazáno %{count} %{plural_model}"
+      selection_toggle_explanation: "(Změnit výběr)"
+      link: "Vytvořit"
+      action_label: "%{title}"
+      labels:
+        destroy: "Vymazat"
+    comments:
+      body: "Tělo"
+      author: "Autor"
+      title: "Komentář"
+      add: "Přidat komentář"
+      resource: "Zdroj"
+      no_comments_yet: "Žádný komentář"
+      title_content: "Komentáře administrátorů (%{count})"
+      errors:
+        empty_text: "Komentář nebyl uložen, je prázdný."
+    devise:
+      login:
+        title: "Přihlášení"
+        remember_me: "Zapamatovat si mě"
+        submit: "Přihlásit"
+      reset_password:
+        title: "Zapomněli jste heslo?"
+        submit: "Obnovit heslo"
+      change_password:
+        title: "Změnit heslo"
+        submit: "Změnit své heslo"
+      links:
+        sign_in: "Přihlásit se"
+        forgot_your_password: "Zapomněli jste heslo?"
+        sign_in_with_omniauth_provider: "Přihlásit se %{provider}"
+
+>>>>>>> 960a08bf (whitespace cleanup)

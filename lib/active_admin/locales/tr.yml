@@ -79,3 +79,8 @@ tr:
       links:
         sign_in: "Oturum aç"
         forgot_your_password: "Şifreni mi unuttun?"
+<<<<<<< HEAD
+=======
+        sign_in_with_omniauth_provider: "%{provider} ile giriş yapın"
+
+>>>>>>> 960a08bf (whitespace cleanup)

@@ -20,12 +20,56 @@ describe ActiveAdmin, "Routing" do
       admin_post_path(1).should == "/admin/posts/1"
     end
 
+<<<<<<< HEAD
     it "should route the new path" do
       new_admin_post_path.should == "/admin/posts/new"
     end
 
     it "should route the edit path" do
       edit_admin_post_path(1).should == "/admin/posts/1/edit"
+=======
+    context "with member action" do
+      context "without an http verb" do
+        before do
+          load_resources do
+            ActiveAdmin.register(Post){ member_action "do_something" }
+          end
+        end
+
+        it "should default to GET" do
+          {:get  => "/admin/posts/1/do_something"}.should     be_routable
+          {:post => "/admin/posts/1/do_something"}.should_not be_routable
+        end
+      end
+
+      context "with one http verb" do
+        before do
+          load_resources do
+            ActiveAdmin.register(Post){ member_action "do_something", :method => :post }
+          end
+        end
+
+        it "should properly route" do
+          {:post => "/admin/posts/1/do_something"}.should be_routable
+        end
+      end
+
+      context "with two http verbs" do
+        before do
+          load_resources do
+            ActiveAdmin.register(Post){ member_action "do_something", :method => [:put, :delete] }
+          end
+        end
+
+        it "should properly route the first verb" do
+          {:put => "/admin/posts/1/do_something"}.should be_routable
+        end
+
+        it "should properly route the second verb" do
+          {:delete => "/admin/posts/1/do_something"}.should be_routable
+        end
+      end
+>>>>>>> 960a08bf (whitespace cleanup)
     end
   end
 

@@ -79,3 +79,8 @@ vi:
       links:
         sign_in: "Đăng nhập"
         forgot_your_password: "Quên mật khẩu của bạn?"
+<<<<<<< HEAD
+=======
+        sign_in_with_omniauth_provider: "Đăng nhập với %{provider}"
+
+>>>>>>> 960a08bf (whitespace cleanup)

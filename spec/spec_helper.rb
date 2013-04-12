@@ -33,14 +33,38 @@ module ActiveAdminIntegrationSpecHelper
     Rails.application.reload_routes!
   end
 
+<<<<<<< HEAD
   # Sets up a describe block where you can render controller 
+=======
+  # Helper method to load resources and ensure that Active Admin is
+  # setup with the new configurations.
+  #
+  # Eg:
+  #   load_resources do
+  #     ActiveAdmin.regiser(Post)
+  #   end
+  #
+  def load_resources
+    ActiveAdmin.unload!
+    yield
+    reload_menus!
+    reload_routes!
+  end
+
+  # Sets up a describe block where you can render controller
+>>>>>>> 960a08bf (whitespace cleanup)
   # actions. Uses the Admin::PostsController as the subject
   # for the describe block
   def describe_with_render(*args, &block)
     describe *args do
       include RSpec::Rails::ControllerExampleGroup
+<<<<<<< HEAD
       render_views  
       metadata[:behaviour][:describes] = Admin::PostsController
+=======
+      render_views
+      # metadata[:behaviour][:describes] = ActiveAdmin.namespaces[:admin].resources['Post'].controller
+>>>>>>> 960a08bf (whitespace cleanup)
       module_eval &block
     end
   end
@@ -61,7 +85,7 @@ module ActiveAdminIntegrationSpecHelper
     ActionView::Base.send :include, ActionView::Helpers
     ActionView::Base.send :include, ActiveAdmin::ViewHelpers
     ActionView::Base.new(ActionController::Base.view_paths, assigns, controller)
-  end  
+  end
   alias_method :action_view, :mock_action_view
 
 end
@@ -103,6 +127,7 @@ if ENV['RAILS'] == '3.0.0'
 
   Rspec::Matchers.define :have_tag do |*args|
 
+<<<<<<< HEAD
     match_unless_raises Test::Unit::AssertionFailedError do |response|
       tag = args.shift
       content = args.first.is_a?(Hash) ? nil : args.shift
@@ -112,6 +137,17 @@ if ENV['RAILS'] == '3.0.0'
       }.merge(args[0] || {})
       
       options[:content] = content if content
+=======
+  match_unless_raises Test::Unit::AssertionFailedError do |response|
+    tag = args.shift
+    content = args.first.is_a?(Hash) ? nil : args.shift
+
+    options = {
+      :tag => tag.to_s
+    }.merge(args[0] || {})
+
+    options[:content] = content if content
+>>>>>>> 960a08bf (whitespace cleanup)
 
       begin
         begin

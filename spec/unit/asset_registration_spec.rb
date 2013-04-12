@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper') 
+=======
+require 'spec_helper'
+>>>>>>> 960a08bf (whitespace cleanup)
 
 module MockRegistration
   extend ActiveAdmin::AssetRegistration
@@ -20,7 +24,16 @@ describe ActiveAdmin::AssetRegistration do
     MockRegistration.register_stylesheet "active_admin.css"
     MockRegistration.stylesheets.should == ["active_admin.css"]    
     MockRegistration.clear_stylesheets!
+<<<<<<< HEAD
     MockRegistration.stylesheets.should == []
+=======
+    MockRegistration.stylesheets.length.should == 0
+  end
+
+  it "should allow media option when registering stylesheet" do
+    MockRegistration.register_stylesheet "active_admin.css", :media => :print
+    MockRegistration.stylesheets.first.options[:media].should == :print
+>>>>>>> 960a08bf (whitespace cleanup)
   end
 
   it "should register a javascript file" do
@@ -30,7 +43,7 @@ describe ActiveAdmin::AssetRegistration do
 
   it "should clear all existing javascripts" do
     MockRegistration.register_javascript "active_admin.js"
-    MockRegistration.javascripts.should == ["active_admin.js"]    
+    MockRegistration.javascripts.should == ["active_admin.js"]
     MockRegistration.clear_javascripts!
     MockRegistration.javascripts.should == []
   end

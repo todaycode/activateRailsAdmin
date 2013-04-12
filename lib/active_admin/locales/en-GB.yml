@@ -80,3 +80,8 @@
       links:
         sign_in: "Sign in"
         forgot_your_password: "Forgot your password?"
+<<<<<<< HEAD
+=======
+        sign_in_with_omniauth_provider: "Sign in with %{provider}"
+
+>>>>>>> 960a08bf (whitespace cleanup)
