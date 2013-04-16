@@ -180,9 +180,25 @@ module ActiveAdmin
       @collection_actions = []
     end
 
+<<<<<<< HEAD
     # Returns the name of the controller class for this resource
     def dashboard_controller_name
       [namespace.module_name, "DashboardController"].compact.join("::")
+=======
+    # Return only defined resource actions
+    def defined_actions
+      controller.instance_methods.map { |m| m.to_sym } & ResourceController::ACTIVE_ADMIN_ACTIONS
+    end
+
+    def belongs_to(target, options = {})
+      @belongs_to = Resource::BelongsTo.new(self, target, options)
+      self.menu_item_menu_name = target unless @belongs_to.optional?
+      controller.belongs_to(target, options.dup)
+    end
+
+    def belongs_to_config
+      @belongs_to
+>>>>>>> 6c2a9886 (improve Comments UI)
     end
 
     # Do we belong to another resource
