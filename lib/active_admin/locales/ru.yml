@@ -1,6 +1,6 @@
 ru:
   active_admin:
-    dashboard: Dashboard
+    dashboard: "Панель управления"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
       call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboards.rb'"
@@ -55,7 +55,13 @@ ru:
       action_label: "%{title} выбранное"
       labels:
         destroy: "Удалить"
+<<<<<<< HEAD
     comments:    
+=======
+    comments:
+      resource_type: "Тип ресурса"
+      author_type: "Тип автора"
+>>>>>>> fbad6c27 (russian locale updated)
       body: "Текст"
       author: "Автор"
       title: "Комментарий"
@@ -76,6 +82,20 @@ ru:
       change_password:
         title: "Изменение пароля"
         submit: "Изменение пароля"
+      unlock:
+        title: "Повторно отправить инструкции по разблокировке"
+        submit: "Повторно отправить инструкции по разблокировке"
       links:
         sign_in: "Войти"
         forgot_your_password: "Забыли пароль?"
+<<<<<<< HEAD
+=======
+        sign_in_with_omniauth_provider: "Войти с помощью %{provider}"
+    access_denied:
+      message: "Вы не авторизованы для выполнения данного действия."
+    index_list:
+      table: "Таблица"
+      block: "Список"
+      grid: "Сетка"
+      blog: "Блог"
+>>>>>>> fbad6c27 (russian locale updated)
