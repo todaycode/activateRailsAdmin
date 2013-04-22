@@ -14,7 +14,30 @@ describe ActiveAdmin::Namespace do
     end
 
     it "should have no resources" do
+<<<<<<< HEAD
       namespace.resources.should == {}
+=======
+      namespace.resources.should be_empty
+    end
+
+    it "should not have any menu item" do
+      if ActiveAdmin::Dashboards.built?
+        # DEPRECATED behavior. If a dashboard was built while running this
+        # spec, then an item gets added to the menu
+        namespace.fetch_menu(:default).children.should_not be_empty
+      else
+        namespace.fetch_menu(:default).children.should be_empty
+      end
+    end
+  end # context "when new"
+
+  describe "settings" do
+    let(:namespace){ ActiveAdmin::Namespace.new(application, :admin) }
+
+    it "should inherit the site title from the application" do
+      ActiveAdmin::Namespace.setting :site_title, "Not the Same"
+      namespace.site_title.should == application.site_title
+>>>>>>> 5a736047 (make ResourceCollection behave more like a Hash)
     end
 
     it "should have an empty menu" do

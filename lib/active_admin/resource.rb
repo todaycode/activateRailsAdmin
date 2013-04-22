@@ -187,7 +187,7 @@ module ActiveAdmin
 =======
     # Return only defined resource actions
     def defined_actions
-      controller.instance_methods.map { |m| m.to_sym } & ResourceController::ACTIVE_ADMIN_ACTIONS
+      controller.instance_methods.map(&:to_sym) & ResourceController::ACTIVE_ADMIN_ACTIONS
     end
 
     def belongs_to(target, options = {})
@@ -201,17 +201,25 @@ module ActiveAdmin
 >>>>>>> 6c2a9886 (improve Comments UI)
     end
 
-    # Do we belong to another resource
+    # Do we belong to another resource?
     def belongs_to?
+<<<<<<< HEAD
       !belongs_to.nil?
+=======
+      !!belongs_to_config
+>>>>>>> 5a736047 (make ResourceCollection behave more like a Hash)
     end
 
     private
 
     def default_options
       {
+<<<<<<< HEAD
         :namespace  => ActiveAdmin.default_namespace,
         :sort_order => ActiveAdmin.default_sort_order,
+=======
+        :sort_order => (resource_class.respond_to?(:primary_key) ? resource_class.primary_key : 'id') + '_desc'
+>>>>>>> 5a736047 (make ResourceCollection behave more like a Hash)
       }
     end
 

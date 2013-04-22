@@ -2,8 +2,6 @@ module ActiveAdmin
 <<<<<<< HEAD
 =======
 
-  class ResourceMismatchError < StandardError; end
-
   # Namespaces are the basic organizing principle for resources within Active Admin
   #
   # Each resource is registered into a namespace which defines:
@@ -79,7 +77,30 @@ module ActiveAdmin
     def unload!
       unload_resources!
       unload_dashboard!
+<<<<<<< HEAD
       unload_menu!
+=======
+      reset_menu!
+    end
+
+    # Returns the first registered ActiveAdmin::Resource instance for a given class
+    def resource_for(klass)
+      resources[klass]
+    end
+
+    # Override from ActiveAdmin::Settings to inherit default attributes
+    # from the application
+    def read_default_setting(name)
+      application.send(name)
+    end
+
+    def fetch_menu(name)
+      @menus.fetch(name)
+    end
+
+    def reset_menu!
+      @menus.clear!
+>>>>>>> 5a736047 (make ResourceCollection behave more like a Hash)
     end
 
     def load_menu!
