@@ -78,7 +78,11 @@ describe_with_render ActiveAdmin::FormBuilder do
     end
   end
 
+<<<<<<< HEAD
   context "with buttons" do
+=======
+  context "with actions" do
+>>>>>>> 7810ac38 ([Added] option to hide new record link for has_many form and changed documentation.)
     it "should generate the form once" do
       build_form do |f|
         f.inputs do
@@ -231,7 +235,48 @@ describe_with_render ActiveAdmin::FormBuilder do
       it "should accept a block with a second argument" do
         body.should have_tag("label", "Title 1")
       end
+
+      it "should add a custom header" do
+        body.should have_tag('h3', 'Post')
+      end 
+
     end
+
+    describe "without heading and new record link" do
+      let :body do
+        build_form({:url => '/categories'}, Category.new) do |f|
+          f.object.posts.build
+          f.has_many :posts, :heading => false, :new_record => false do |p|
+            p.input :title
+          end
+        end
+      end
+
+      it "should not add a header" do
+        body.should_not have_tag('h3', 'Post')
+      end 
+
+      it "should not add link to new nested records" do
+        body.should_not have_tag('a', 'Add New Post')
+      end 
+
+    end  
+
+    describe "with custom heading" do
+      let :body do
+        build_form({:url => '/categories'}, Category.new) do |f|
+          f.object.posts.build
+          f.has_many :posts, :heading => "Test heading" do |p|
+            p.input :title
+          end
+        end
+      end
+
+      it "should add a custom header" do
+        body.should have_tag('h3', 'Test heading')
+      end       
+
+    end  
 
     describe "with allow destroy" do
       context "with an existing post" do

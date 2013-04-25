@@ -120,6 +120,7 @@ module ActiveAdmin
         end
       end
 
+<<<<<<< HEAD
       context "when registering a plural resource" do
         class ::News; def self.has_many(*); end end
 
@@ -127,6 +128,12 @@ module ActiveAdmin
         it "should return the plurali route with _index" do
           config.route_collection_path.should == :admin_news_index_path
         end
+=======
+      it "should set the target menu to the belongs to target" do
+        config.navigation_menu_name.should == ActiveAdmin::DEFAULT_MENU
+        config.belongs_to :posts
+        config.navigation_menu_name.should == :posts
+>>>>>>> 5101f786 (refactor menu item attributes)
       end
     end
 

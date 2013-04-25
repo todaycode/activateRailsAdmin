@@ -61,7 +61,7 @@ module ActiveAdmin
     end
 
     def has_many(association, options = {}, &block)
-      options = { :for => association }.merge(options)
+      options = { :for => association, :new_record => true }.merge(options)
       options[:class] ||= ""
       options[:class] << "inputs has_many_fields"
 
@@ -102,6 +102,7 @@ module ActiveAdmin
           form_buffers.last << template.content_tag(:h3, association.to_s.titlecase)
           inputs options, &form_block
 
+<<<<<<< HEAD
           # Capture the ADD JS
           js = with_new_form_buffer do
             inputs_for_nested_attributes  :for => [association, object.class.reflect_on_association(association).klass.new],
@@ -110,6 +111,21 @@ module ActiveAdmin
                                             :child_index => "NEW_RECORD"
                                           }, &form_block
           end
+=======
+          js = options[:new_record] ? js_for_has_many(association, form_block, template) : ""
+          form_buffers.last << js.html_safe
+        end
+      end
+    end
+
+    def semantic_errors(*args)
+      form_buffers.last << with_new_form_buffer{ super }
+    end
+
+    # These methods are deprecated and removed from Formtastic, however are
+    # supported here to help with transition.
+    module DeprecatedMethods
+>>>>>>> 7810ac38 ([Added] option to hide new record link for has_many form and changed documentation.)
 
           js = template.escape_javascript(js)
           js = template.link_to "Add New #{association.to_s.singularize.titlecase}", "#", :onclick => "$(this).before('#{js}'.replace(/NEW_RECORD/g, new Date().getTime())); return false;", :class => "button"

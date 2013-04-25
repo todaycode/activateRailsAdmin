@@ -1,32 +1,35 @@
 module ActiveAdmin
   module AssetRegistration
 
+<<<<<<< HEAD
     # Stylesheets
 
     def register_stylesheet(name)
       stylesheets << name
+=======
+    def register_stylesheet(path, options = {})
+      stylesheets[path] = options
+>>>>>>> 34384c1e (prevent assets from being registered multiple times)
     end
 
     def stylesheets
-      @stylesheets ||= []
+      @stylesheets ||= {}
     end
 
     def clear_stylesheets!
-      @stylesheets = []
+      @stylesheets = {}
     end
 
-
-    # Javascripts
-
     def register_javascript(name)
-      javascripts << name
+      javascripts.add name
     end
 
     def javascripts
-      @javascripts ||= []
+      @javascripts ||= Set.new
     end
 
     def clear_javascripts!
+<<<<<<< HEAD
       @javascripts = []
     end
 <<<<<<< HEAD
@@ -49,4 +52,10 @@ module ActiveAdmin
   end
 
 >>>>>>> 960a08bf (whitespace cleanup)
+=======
+      @javascripts = Set.new
+    end
+
+  end
+>>>>>>> 34384c1e (prevent assets from being registered multiple times)
 end
