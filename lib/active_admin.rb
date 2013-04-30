@@ -80,6 +80,7 @@ module ActiveAdmin
   autoload :ViewHelpers,              'active_admin/view_helpers'
   autoload :Views,                    'active_admin/views'
 
+<<<<<<< HEAD
   class Railtie < ::Rails::Railtie
     config.after_initialize do
       # Add load paths straight to I18n, so engines and application can overwrite it.
@@ -97,6 +98,9 @@ module ActiveAdmin
   #
   @@default_namespace = :admin
   mattr_accessor :default_namespace
+=======
+  class << self
+>>>>>>> 8d4b7804 (Remove Railtie, Use Rails Engine)
 
   # The default number of resources to display on index pages
   @@default_per_page = 30
