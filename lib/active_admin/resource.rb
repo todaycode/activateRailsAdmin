@@ -215,11 +215,15 @@ module ActiveAdmin
     def default_options
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         :namespace  => ActiveAdmin.default_namespace,
         :sort_order => ActiveAdmin.default_sort_order,
 =======
         :sort_order => (resource_class.respond_to?(:primary_key) ? resource_class.primary_key : 'id') + '_desc'
 >>>>>>> 5a736047 (make ResourceCollection behave more like a Hash)
+=======
+        :sort_order => (resource_class.respond_to?(:primary_key) ? resource_class.primary_key.to_s : 'id') + '_desc'
+>>>>>>> cc5577c5 (Some ORMs/ODMs return a Symbol for primary key, therefore we must call #to_s (or interpolate as was the case before @Daxter's 5a736047))
       }
     end
 
