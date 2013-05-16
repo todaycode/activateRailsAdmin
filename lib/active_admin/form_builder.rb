@@ -135,10 +135,27 @@ module ActiveAdmin
       end
       form_buffers.last << content.html_safe
     end
+<<<<<<< HEAD
     
     def semantic_errors(*args)
       content = with_new_form_buffer { super }
       form_buffers.last << content.html_safe unless content.nil?
+=======
+
+    # Overrides Formtastic's version to include ActiveAdmin::Inputs::*
+    def input_class_with_const_defined(as)
+      input_class_name = custom_input_class_name(as)
+
+      if ::Object.const_defined?(input_class_name)
+        input_class_name.constantize
+      elsif ActiveAdmin::Inputs.const_defined?(input_class_name)
+        active_admin_input_class_name(as).constantize
+      elsif Formtastic::Inputs.const_defined?(input_class_name)
+        standard_input_class_name(as).constantize
+      else
+        raise Formtastic::UnknownInputError, "Unable to find input class #{input_class_name}"
+      end
+>>>>>>> 1b96e23c (modularize the search method dropdown for the filter form)
     end
 
     private
@@ -156,6 +173,29 @@ module ActiveAdmin
       form_buffers.pop
       return_value
     end
+<<<<<<< HEAD
     
+=======
+
+    # Capture the ADD JS
+    def js_for_has_many(association, form_block, template)
+      assoc_reflection = object.class.reflect_on_association(association)
+      assoc_name       = assoc_reflection.klass.model_name
+      placeholder      = "NEW_#{assoc_name.to_s.upcase.split(' ').join('_')}_RECORD"
+      opts = {
+        :for         => [association, assoc_reflection.klass.new],
+        :class       => "inputs has_many_fields",
+        :for_options => { :child_index => placeholder }
+      }
+      js = with_new_form_buffer{ inputs_for_nested_attributes opts, &form_block }
+      js = template.escape_javascript js
+
+      onclick = "$(this).before('#{js}'.replace(/#{placeholder}/g, new Date().getTime())); return false;"
+      text    = I18n.t 'active_admin.has_many_new', :model => assoc_name.human
+
+      template.link_to(text, "#", :onclick => onclick, :class => "button").html_safe
+    end
+
+>>>>>>> 8c57442a (fix Rails 4 problem with form builder ("undefined method `upcase'"))
   end
 end

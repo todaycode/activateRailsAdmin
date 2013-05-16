@@ -19,15 +19,19 @@ describe "Memory Leak" do
 
   def self.it_should_not_leak(klass)
     it "should not leak #{klass}" do
+<<<<<<< HEAD
       pending
 
+=======
+      previously_disabled = GC.enable # returns true if the garbage collector was disabled
+>>>>>>> 9d2dc18a (improve test perf by deferring garbage collection)
       GC.start
-
       count = count_instances_of(klass)
 
       load_defaults!
-      GC.start
 
+      GC.start
+      GC.disable if previously_disabled
       count_instances_of(klass).should <= count
     end
   end

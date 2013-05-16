@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH << File.expand_path('../support', __FILE__)
 
@@ -11,6 +12,9 @@ Bundler.setup
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 autoload :ActiveAdmin, 'active_admin'
 
+=======
+require 'spec_helper_without_rails'
+>>>>>>> 9d2dc18a (improve test perf by deferring garbage collection)
 
 module ActiveAdminIntegrationSpecHelper
 
@@ -168,4 +172,20 @@ if ENV['RAILS'] == '3.0.0'
 
 end
 
+<<<<<<< HEAD
 
+=======
+# improve the performance of the specs suite by not logging anything
+# see http://blog.plataformatec.com.br/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/
+Rails.logger.level = 4
+
+
+# Improves performance by forcing the garbage collector to run less often.
+unless ENV['DEFER_GC'] == '0' || ENV['DEFER_GC'] == 'false'
+  require 'support/deferred_garbage_collection'
+  RSpec.configure do |config|
+    config.before(:all) { DeferredGarbageCollection.start }
+    config.after(:all)  { DeferredGarbageCollection.reconsider }
+  end
+end
+>>>>>>> 9d2dc18a (improve test perf by deferring garbage collection)
