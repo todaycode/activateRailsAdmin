@@ -7,13 +7,19 @@ describe_with_render ActiveAdmin::FormBuilder do
     get :new
   end
 
+<<<<<<< HEAD
   context "in general" do
     before do
+=======
+  context "in general with actions" do
+    let :body do
+>>>>>>> 97293a7b (remove redundant set of tests)
       build_form do |f|
         f.inputs do
           f.input :title
           f.input :body
         end
+<<<<<<< HEAD
         f.buttons do
           f.commit_button "Submit Me"
           f.commit_button "Another Button"
@@ -34,6 +40,29 @@ describe_with_render ActiveAdmin::FormBuilder do
       response.should have_tag("input", :attributes => {  :type => "submit",
                                                           :value => "Submit Me" })
       response.should have_tag("input", :attributes => {  :type => "submit",
+=======
+        f.actions do
+          f.action :submit, :label => "Submit Me"
+          f.action :submit, :label => "Another Button"
+        end
+      end
+    end
+
+   it "should generate a text input" do
+      body.should have_tag("input", :attributes => { :type => "text",
+                                                     :name => "post[title]" })
+    end
+    it "should generate a textarea" do
+      body.should have_tag("textarea", :attributes => { :name => "post[body]" })
+    end
+    it "should only generate the form once" do
+      body.scan(/Title/).size.should == 1
+    end
+    it "should generate actions" do
+      body.should have_tag("input", :attributes => {  :type => "submit",
+                                                          :value => "Submit Me" })
+      body.should have_tag("input", :attributes => {  :type => "submit",
+>>>>>>> 97293a7b (remove redundant set of tests)
                                                           :value => "Another Button" })
     end
   end
@@ -208,6 +237,66 @@ describe_with_render ActiveAdmin::FormBuilder do
     end
   end
 
+<<<<<<< HEAD
+=======
+  context "with has many inputs" do
+    describe "with simple block" do
+      let :body do
+        build_form({:url => '/categories'}, Category.new) do |f|
+          f.object.posts.build
+          f.has_many :posts do |p|
+            p.input :title
+          end
+        end
+      end
+
+      it "should translate the association name in header" do
+        begin
+          I18n.backend.store_translations(:en, :activerecord => { :models => { :post => { :one => "Blog Post", :other => "Blog Posts" } } })
+          body.should have_tag('h3', 'Blog Posts')
+        ensure
+          I18n.backend.reload!
+        end
+      end
+
+      it "should use model name when there is no translation for given model in header" do
+        body.should have_tag('h3', 'Post')
+      end
+
+      it "should translate the association name in has many new button" do
+        begin
+          I18n.backend.store_translations(:en, :activerecord => { :models => { :post => { :one => "Blog Post", :other => "Blog Posts" } } })
+          body.should have_tag('a', 'Add New Blog Post')
+        ensure
+          I18n.backend.reload!
+        end
+      end
+
+      it "should translate the attribute name" do
+        begin
+          I18n.backend.store_translations :en, :activerecord => { :attributes => { :post => { :title => 'A very nice title' } } }
+          body.should have_tag 'label', 'A very nice title'
+        ensure
+          I18n.backend.reload!
+        end
+      end
+
+      it "should use model name when there is no translation for given model in has many new button" do
+        body.should have_tag('a', 'Add New Post')
+      end
+
+      it "should render the nested form" do
+        body.should have_tag("input", :attributes => {:name => "category[posts_attributes][0][title]"})
+      end
+
+      it "should add a link to remove new nested records" do
+        Capybara.string(body).should have_css(".has_many > fieldset > ol > li.has_many_delete > a", :class => "button", :href => "#", :content => "Delete")
+      end
+
+      it "should include the nested record's class name in the js" do
+        body.should have_tag("a", :attributes => { :onclick => /NEW_POST_RECORD/ })
+      end
+>>>>>>> b7cb8877 (add test to ensure that form attribute labels are translated)
 
 <<<<<<< HEAD
   { 

@@ -11,21 +11,31 @@ module ActiveAdmin
     end
 
     def inputs(*args, &block)
+<<<<<<< HEAD
       # Store that we are creating inputs without a block
       @inputs_with_block = block_given? ? true : false
       content = with_new_form_buffer { super }
       form_buffers.last << content.html_safe
+=======
+      @use_form_buffer = block_given?
+      form_buffers.last << with_new_form_buffer{ super }
+>>>>>>> fb69f7f7 (use the form buffer!)
     end
 
     # The input method returns a properly formatted string for
     # its contents, so we want to skip the internal buffering
     # while building up its contents
     def input(method, *args)
+<<<<<<< HEAD
       return if polymorphic_belongs_to_association?(method)
       
       content = with_new_form_buffer { super }
       return content.html_safe unless @inputs_with_block
       form_buffers.last << content.html_safe
+=======
+      content = with_new_form_buffer{ super }
+      @use_form_buffer ? form_buffers.last << content : content
+>>>>>>> fb69f7f7 (use the form buffer!)
     end
 
     # The buttons method always needs to be wrapped in a new buffer
