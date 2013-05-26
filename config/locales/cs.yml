@@ -29,9 +29,12 @@ cs:
 >>>>>>> e8d27766 (Add i18n for has_many_remove label)
     clear_filters: "Vyčistit filtry"
 <<<<<<< HEAD
+<<<<<<< HEAD
     search_field: "%{field}"
 =======
     search_field: "Prohledat %{field}"
+=======
+>>>>>>> 24178450 (update string filter UI)
     contains: "Obsahuje"
     starts_with: "Začíná se"
     ends_with: "Končí"

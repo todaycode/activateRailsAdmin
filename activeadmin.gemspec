@@ -220,6 +220,7 @@ Gem::Specification.new do |s|
     "spec/unit/tabs_renderer_spec.rb"
   ]
 
+<<<<<<< HEAD
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
@@ -295,5 +296,18 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<inherited_views>, [">= 0"])
     s.add_dependency(%q<devise>, [">= 0"])
   end
+=======
+  s.add_dependency("rails", ">= 3.0.0")
+  s.add_dependency("jquery-rails", ">= 1.0.0", "< 3.0.0")
+  s.add_dependency("bourbon", ">= 1.0.0")
+  s.add_dependency("meta_search", ">= 0.9.2")
+  s.add_dependency("devise", ">= 1.1.2")
+  s.add_dependency("formtastic", ">= 2.0.0")
+  s.add_dependency("inherited_resources", ">= 1.3.1")
+  s.add_dependency("kaminari", ">= 0.13.0")
+  s.add_dependency("sass", ">= 3.1.0")
+  s.add_dependency("fastercsv", ">= 0")
+  s.add_dependency("arbre", ">= 1.0.1")
+>>>>>>> 1d29474c (Fix jquery-rails dependency version)
 end
 

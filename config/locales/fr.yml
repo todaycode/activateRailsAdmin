@@ -31,7 +31,6 @@ fr:
     logout: "Se déconnecter"
 =======
     clear_filters: "Supprimer les filtres"
-    search_field: "Rechercher %{field}"
     contains: "Contient"
     starts_with: "Commence par"
     ends_with: "Se termine par"

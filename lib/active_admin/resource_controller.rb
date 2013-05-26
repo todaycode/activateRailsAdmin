@@ -34,6 +34,7 @@ module ActiveAdmin
 
     before_filter :set_current_tab
 
+<<<<<<< HEAD
     class << self
       # Ensure that this method is available for the DSL
       public :actions
@@ -169,6 +170,22 @@ module ActiveAdmin
 
     def active_admin_config
       self.class.active_admin_config
+=======
+    def self.active_admin_config=(config)
+      if @active_admin_config = config
+        defaults :resource_class => config.resource_class,
+                 :route_prefix   => config.route_prefix,
+                 :instance_name  => config.resource_name.singular
+      end
+    end
+
+    # Inherited Resources uses the `self.inherited(base)` hook to add
+    # in `self.resource_class`. To override it, we need to install
+    # our resource_class method each time we're inherited from.
+    def self.inherited(base)
+      super(base)
+      base.override_resource_class_methods!
+>>>>>>> 93d1d866 (controller code cleanup)
     end
     helper_method :active_admin_config
 
