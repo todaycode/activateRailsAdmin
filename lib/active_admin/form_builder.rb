@@ -168,7 +168,24 @@ module ActiveAdmin
 >>>>>>> 1b96e23c (modularize the search method dropdown for the filter form)
     end
 
+<<<<<<< HEAD
     private
+=======
+    # use auto-loading in development environment
+    def input_class_by_trying(as)
+      begin
+        custom_input_class_name(as).constantize
+      rescue NameError
+        begin
+          active_admin_input_class_name(as).constantize
+        rescue NameError
+          standard_input_class_name(as).constantize
+        end
+      end
+    rescue NameError
+      raise Formtastic::UnknownInputError
+    end
+>>>>>>> 02960bb5 (one too many begin/end blocks)
 
     # Pass in a method to check if it's a polymorphic association
     def polymorphic_belongs_to_association?(method)
