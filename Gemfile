@@ -55,7 +55,7 @@ group :test do
   gem 'cancan'
   gem 'capybara',        '1.1.2'
   gem 'cucumber-rails',  '1.3.0', :require => false
-  gem 'database_cleaner'
+  gem 'database_cleaner', '<= 1.0.1'
   gem 'guard-coffeescript'
   gem 'guard-rspec'
   gem 'jasmine'
