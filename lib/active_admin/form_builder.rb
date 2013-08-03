@@ -183,7 +183,7 @@ module ActiveAdmin
         end
       end
     rescue NameError
-      raise Formtastic::UnknownInputError
+      raise Formtastic::UnknownInputError, "Unable to find input class for #{as}"
     end
 >>>>>>> 02960bb5 (one too many begin/end blocks)
 
