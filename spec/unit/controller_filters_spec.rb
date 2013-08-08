@@ -65,4 +65,9 @@ describe ActiveAdmin::Application do
     application.around_filter :my_filter, :only => :show
 >>>>>>> 9a9693b5 (hook filters into Devise controllers just like resource controllers)
   end
+  
+  it 'skip_filter' do
+    controllers.each{ |c| c.should_receive(:skip_filter).and_return(true) }
+    application.skip_filter :my_filter, :only => :show
+  end
 end
