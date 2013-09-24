@@ -1,4 +1,4 @@
-## Master (unreleased) - [compare](https://github.com/gregbell/active_admin/compare/v0.6.0...master)
+## Master (unreleased) - [compare](https://github.com/gregbell/active_admin/compare/v0.6.1...master)
 
 ### Features
 
