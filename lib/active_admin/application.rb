@@ -120,8 +120,8 @@ module ActiveAdmin
 
     # Registers a brand new configuration for the given resource.
     def register(resource, options = {}, &block)
-      ns_name = namespace_name(options)
-      namespace(ns_name).register resource, options, &block
+      ns = options.fetch(:namespace){ default_namespace }
+      namespace(ns).register resource, options, &block
     end
 
     # Creates a namespace for the given name
@@ -151,8 +151,8 @@ module ActiveAdmin
     # @&block The registration block.
     #
     def register_page(name, options = {}, &block)
-      ns_name = namespace_name(options)
-      namespace(ns_name).register_page name, options, &block
+      ns = options.fetch(:namespace){ default_namespace }
+      namespace(ns).register_page name, options, &block
     end
 
     # Whether all configuration files have been loaded
@@ -163,7 +163,7 @@ module ActiveAdmin
     # Removes all defined controllers from memory. Useful in
     # development, where they are reloaded on each request.
     def unload!
-      namespaces.values.each{ |namespace| namespace.unload! }
+      namespaces.values.each &:unload!
       @@loaded = false
     end
 
@@ -207,12 +207,7 @@ module ActiveAdmin
       end
     end
 
-    private
-
-    # Return either the passed in namespace or the default
-    def namespace_name(options)
-      options.fetch(:namespace){ default_namespace }
-    end
+  private
 
     def register_default_assets
       register_stylesheet 'active_admin.css', :media => 'screen'
