@@ -114,7 +114,6 @@ module ActiveAdmin
     include Scopes
     include ScopeTo
     include Sidebars
-    include Menu
     include Routes
 >>>>>>> b7fa1076 (Resolves #587 adding :if & :unless proc arguments to scope_to() method)
 
