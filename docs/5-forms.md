@@ -70,16 +70,15 @@ The `:heading` option will add a custom heading to has_many form. You can hide a
 
 The `:new_record` option will show or hide new record link at the bottom of has_many form. It is set as true by default.
 
-## DatePicker
+## Datepicker
 
-ActiveAdmin offers the `datepicker` input, which uses the [jQueryUI Datepicker](http://jqueryui.com/datepicker/).
-The datepicker input accepts any of the options available to the standard
-jQueryUI Datepicker, e.g.
+ActiveAdmin offers the `datepicker` input, which uses the [jQueryUI datepicker](http://jqueryui.com/datepicker/).
+The datepicker input accepts any of the options available to the standard jQueryUI Datepicker. For example:
 
 ```ruby
 form do |f|
-  f.input :starts_at, as: :datepicker, datepicker_options: { min_date: "2013-10-8", max_date: 3.days.from_now.to_date }
-  f.input :ends_at, as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1W +5D" }
+  f.input :starts_at, as: :datepicker, datepicker_options: { min_date: "2013-10-8",        max_date: "+3D" }
+  f.input :ends_at,   as: :datepicker, datepicker_options: { min_date: 3.days.ago.to_date, max_date: "+1W +5D" }
 end
 ```
 
