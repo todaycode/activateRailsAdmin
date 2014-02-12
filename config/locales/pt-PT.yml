@@ -57,7 +57,7 @@
       link: "Novo"
       action_label: "%{title} Selecionado"
       labels:
-        destroy: "Excluído"
+        destroy: "Excluir"
     comments:
       body: "Conteúdo"
       author: "Autor"
