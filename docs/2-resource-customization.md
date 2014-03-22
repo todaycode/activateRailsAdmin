@@ -32,6 +32,25 @@ Due to the newly introduced [Strong Parameters](https://github.com/rails/strong_
 plug-in in Rails 4 you are required to explicitly allow attributes for mass updating and thus 
 prevent them from accidentally being exposed.
 
+The `permit_params` call creates a method called `permitted_params`. You should use this method when overriding `create` or `update` actions:
+
+```ruby
+ActiveAdmin.register Post do
+  controller do
+    def create
+      # Good
+      @post = Post.new(permitted_params)
+      # Bad
+      @post = Post.new(params[:post])
+
+      if @post.save
+        # ...
+      end
+    end
+  end
+end
+```
+
 ## Disabling Actions on a Resource
 
 All default CRUD actions are enabled by default. These can be disabled for a given resource:
