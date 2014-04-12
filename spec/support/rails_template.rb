@@ -7,7 +7,6 @@ generate :model, 'category name:string'
 
 run "rm Gemfile"
 run "rm -r test"
-run "rm -r spec"
 
 rake "db:migrate"
 rake "db:test:prepare"
