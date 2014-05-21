@@ -37,7 +37,7 @@ else
   raise "Rails #{rails_version} is not supported yet"
 end
 
-gem 'sass-rails', '4.0.3' # #3005, #3093
+gem 'sass-rails', '4.0.3' if rails_version[0] == '4' # #3005, #3093
 
 gem 'pry' # elegant debugging anywhere with `binding.pry`
 
