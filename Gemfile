@@ -37,7 +37,7 @@ else
   raise "Rails #{rails_version} is not supported yet"
 end
 
-gem 'sprockets', '<= 2.11.0' # Hold back sprockets, ref: #3005
+gem 'sass-rails', '4.0.3' # #3005, #3093
 
 gem 'pry' # elegant debugging anywhere with `binding.pry`
 
