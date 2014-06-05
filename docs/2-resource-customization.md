@@ -39,7 +39,7 @@ ActiveAdmin.register Post do
   controller do
     def create
       # Good
-      @post = Post.new(permitted_params)
+      @post = Post.new(permitted_params[:post])
       # Bad
       @post = Post.new(params[:post])
 
