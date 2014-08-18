@@ -51,6 +51,13 @@ If you use `will_paginate` in your app, you need to configure an initializer for
 Kaminari to avoid conflicts. Put this in `config/initializers/kaminari.rb`
 
 
+<<<<<<< HEAD
     Kaminari.configure do |config|
       config.page_method_name = :per_page_kaminari
     end
+=======
+[CHANGELOG]: https://github.com/activeadmin/activeadmin/blob/master/CHANGELOG.md
+[dashboard.rb]: https://github.com/activeadmin/activeadmin/blob/master/lib/generators/active_admin/install/templates/dashboard.rb
+[active_admin.rb]: https://github.com/activeadmin/activeadmin/blob/master/lib/generators/active_admin/install/templates/active_admin.rb.erb
+[read #2703]: https://github.com/activeadmin/activeadmin/issues/2703#issuecomment-38140864
+>>>>>>> 1e938ac5 (rename active_admin to activeadmin)

@@ -17,6 +17,15 @@ module ActiveAdmin
                     :desc => "Should a default user be created inside the migration?"
 
       def install_devise
+<<<<<<< HEAD
+=======
+        begin
+          Dependency.devise! Dependency::DEVISE
+        rescue DependencyError => e
+          raise Error, "#{e.message} If you don't want to use devise, run the generator with --skip-users."
+        end
+
+>>>>>>> 80ad7b34 (refactor DependencyError)
         require 'devise'
         if File.exists?(File.join(destination_root, "config", "initializers", "devise.rb"))
           log :generate, "No need to install devise, already done."

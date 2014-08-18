@@ -26,6 +26,8 @@ rails_version = detect_rails_version
 gem 'rails', rails_version
 gem 'bourbon'
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 case rails_version
 when /^3\.0/
   # Do nothing, bundler should figure it out
@@ -36,8 +38,18 @@ when /^3\.(1|2)/
 else
   raise "Rails #{rails_version} is not supported yet"
 end
+=======
+gem 'arbre', github: 'activeadmin/arbre' # until activeadmin/arbre#16 makes it into an official release
+>>>>>>> 1e938ac5 (rename active_admin to activeadmin)
 
 gem 'sass-rails', '4.0.3' if rails_version[0] == '4' # #3005, #3093
+=======
+# Optional dependencies
+gem 'cancan'
+gem 'devise'
+gem 'draper'
+gem 'pundit'
+>>>>>>> 36edd084 (use Arbre 1.0.2)
 
 gem 'pry' # elegant debugging anywhere with `binding.pry`
 
