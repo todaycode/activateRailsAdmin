@@ -40,7 +40,7 @@ so feel free to [contribute!](/CONTRIBUTING.md)
 =======
 [config/locales/en.yml](https://github.com/activeadmin/activeadmin/blob/master/config/locales/en.yml)
 to your application's `config/locales` folder and update it. We welcome new/updated translations,
-so feel free to [contribute!](https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md).
+so feel free to [contribute](https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md)!
 To translate third party gems like devise, use for example devise-i18n.
 >>>>>>> 1e938ac5 (rename active_admin to activeadmin)
 
