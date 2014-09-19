@@ -11,6 +11,14 @@ describe ActiveAdmin, "Routing" do
 
   include Rails.application.routes.url_helpers
 
+  describe "root path helper" do
+    context "when in admin namespace" do
+      it "should be admin_root_path" do
+        expect(admin_root_path).to eq "/admin"
+      end
+    end
+  end
+
   describe "standard resources" do
     it "should route the index path" do
       admin_posts_path.should == "/admin/posts"
