@@ -250,6 +250,8 @@ describe_with_render ActiveAdmin::FormBuilder do
         end
       end
 
+      let(:valid_html_id) { /^[A-Za-z]+[\w\-\:\.]*$/ }
+
       it "should translate the association name in header" do
         begin
           I18n.backend.store_translations(:en, :activerecord => { :models => { :post => { :one => "Blog Post", :other => "Blog Posts" } } })
@@ -308,6 +310,19 @@ describe_with_render ActiveAdmin::FormBuilder do
 =======
       it "should add a link to add new nested records" do
         Capybara.string(body).should have_css(".has_many > fieldset > ol > li > a", :class => "button", :href => "#", :content => "Add New Post")
+      end
+
+      it "should set an HTML-id valid placeholder" do
+        link = Capybara.string(body).find('.has_many_container > a.button.has_many_add')
+        expect(link[:'data-placeholder']).to match valid_html_id
+      end
+
+      describe "with namespaced model" do
+        it "should set an HTML-id valid placeholder" do
+          allow(Post).to receive(:name).and_return "ActiveAdmin::Post"
+          link = Capybara.string(body).find('.has_many_container > a.button.has_many_add')
+          expect(link[:'data-placeholder']).to match valid_html_id
+        end
       end
     end
 
