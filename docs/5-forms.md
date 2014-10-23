@@ -40,7 +40,7 @@ Then implement app/views/admin/posts/_form.html.erb:
 
 ## Nested Resources
 
-You can create forms with nested models using the `has_many` method:
+You can create forms with nested models using the `has_many` method, even if your model uses `has_one`:
 
     ActiveAdmin.register Post do
 
