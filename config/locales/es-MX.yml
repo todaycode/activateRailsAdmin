@@ -46,9 +46,6 @@ es-MX:
     blank_slate:
       content: "No hay %{resource_name} aún."
       link: "Añadir"
-      entry:
-        one: "registro"
-        other: "registros"
     any: "Cualquiera"
     batch_actions:
       button_label: "Acciones en masa"
