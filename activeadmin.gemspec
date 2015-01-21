@@ -316,7 +316,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-rails'
   s.add_dependency 'formtastic',          '~> 3.0', '< 3.1' # unitl #3544 is implemented
   s.add_dependency 'formtastic_i18n'
-  s.add_dependency 'inherited_resources', '~> 1.4', '!= 1.5.0'
+  s.add_dependency 'inherited_resources', '~> 1.6'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'jquery-ui-rails',     '~> 5.0'
   s.add_dependency 'kaminari',            '~> 0.15'
