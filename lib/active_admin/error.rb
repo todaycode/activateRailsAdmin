@@ -43,7 +43,7 @@ module ActiveAdmin
       raise new exception
     end
 
-  private
+    private
 
     def self.database_error_classes
       classes = []
@@ -56,6 +56,9 @@ module ActiveAdmin
   end
 
   class NoMenuError < KeyError
+  end
+
+  class GeneratorError < Error
   end
 
 end
