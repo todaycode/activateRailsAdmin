@@ -43,4 +43,4 @@ describe ActiveAdmin::ResourceController::Sidebars do
       message = "expected before_filter to set @skip_sidebar to '#{expected}', but was '#{@actual}'"
     end
   end
-end
+end unless ActiveAdmin::Dependency.rails < 4
