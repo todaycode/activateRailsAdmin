@@ -38,6 +38,18 @@ Then implement app/views/admin/posts/_form.html.erb:
       <%= f.actions :commit %>
     <% end %>
 
+You can also use the `ActiveAdmin::FormBuilder` as builder in your Formtastic Form for use the same helpers are used in the admin file:
+
+```ruby
+  = semantic_form_for [:admin, @post], builder: ActiveAdmin::FormBuilder do |f|
+    = f.inputs "Details" do
+      = f.input :title
+    - f.has_many :taggings, sortable: :position, sortable_start: 1 do |t|
+      - t.input :tag
+    = f.actions
+
+```
+
 ## Nested Resources
 
 You can create forms with nested models using the `has_many` method, even if your model uses `has_one`:
