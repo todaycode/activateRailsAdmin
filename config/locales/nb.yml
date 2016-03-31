@@ -43,7 +43,7 @@ nb:
       link: "Opprett en"
     devise:
       login:
-        title: "Logg inn"
+        title: "Innlogging"
         remember_me: "Husk meg"
         submit: "Logg inn"
       reset_password:
