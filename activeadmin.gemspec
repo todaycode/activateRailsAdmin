@@ -320,7 +320,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails'
   s.add_dependency 'jquery-ui-rails',     '~> 5.0'
   s.add_dependency 'kaminari',            '~> 0.15'
-  s.add_dependency 'rails',               '>= 3.2', '< 5.1'
+  s.add_dependency 'railties',            '>= 3.2', '< 5.1'
   s.add_dependency 'ransack',             '~> 1.3'
   s.add_dependency 'sass-rails'
 >>>>>>> 36edd084 (use Arbre 1.0.2)
