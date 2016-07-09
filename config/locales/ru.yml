@@ -65,6 +65,7 @@ ru:
     comments:    
 =======
     comments:
+      created_at: "Дата создания"
       resource_type: "Тип ресурса"
       author_type: "Тип автора"
 >>>>>>> fbad6c27 (russian locale updated)
