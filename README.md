@@ -114,5 +114,5 @@ Tool                  | Description
 [Formtastic]: https://github.com/justinfrench/formtastic
 [Iconic Icons]: http://somerandomdude.com/projects/iconic
 [Inherited Resources]: https://github.com/josevalim/inherited_resources
-[Kaminari]: https://github.com/amatsuda/kaminari
+[Kaminari]: https://github.com/kaminari/kaminari
 [Ransack]: https://github.com/activerecord-hackery/ransack
