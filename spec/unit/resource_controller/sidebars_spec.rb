@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ActiveAdmin::ResourceController::Sidebars do
   let(:controller){ Admin::PostsController }
 
-  context 'without before_filter' do
+  context 'without skip_sidebar! before filter' do
     before do
       ActiveAdmin.register Post
     end
@@ -13,7 +13,7 @@ describe ActiveAdmin::ResourceController::Sidebars do
     it { should set_skip_sidebar_to nil }
   end
 
-  describe '#skip_sidebar!' do
+  context 'with skip_sidebar! before_filter' do
     before do
       ActiveAdmin.register Post do
         before_filter :skip_sidebar!
