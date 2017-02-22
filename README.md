@@ -61,12 +61,11 @@ gem 'activeadmin', github: 'activeadmin', branch: '0-6-stable'
 
 ## Documentation
 
-Please note that <http://activeadmin.info> is out of date. For the latest docs, check out the
-Github [docs](https://github.com/activeadmin/activeadmin/tree/master/docs#activeadmin-documentation) and the [wiki](https://github.com/activeadmin/activeadmin/wiki).
+For the latest docs, check out the Github <http://activeadmin.info> and the [wiki](https://github.com/activeadmin/activeadmin/wiki).
 
 ## Links
 
-* Website: <http://www.activeadmin.info> (out of date)
+* Website: <http://activeadmin.info>
 * Live demo: <http://demo.activeadmin.info/admin>
 * Documentation
   * Guides: <https://github.com/activeadmin/activeadmin/tree/master/docs>
@@ -81,7 +80,7 @@ Github [docs](https://github.com/activeadmin/activeadmin/tree/master/docs#active
 
 ## Getting started
 
-Check out [the docs](https://github.com/activeadmin/activeadmin/blob/master/docs/0-installation.md)!
+Check out [the docs](http://activeadmin.info/0-installation.html)!
 
 ## Need help?
 
@@ -92,8 +91,7 @@ Ask us in IRC ([#activeadmin](https://webchat.freenode.net/?channels=activeadmin
 ## Want to contribute?
 
 The [contributing guide](https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md)
-is a good place to start. If you have questions, feel free to ask
-[@seanlinsley](https://twitter.com/seanlinsley) or [@captainhagbard](https://twitter.com/captainhagbard).
+is a good place to start. If you have questions, feel free to ask.
 
 ## Dependencies
 
