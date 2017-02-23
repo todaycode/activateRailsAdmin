@@ -8,6 +8,8 @@ describe ActiveAdmin::Namespace, "registering a resource" do
 
   let(:menu){ namespace.fetch_menu(:default) }
 
+  after { namespace.unload! }
+
   context "with no configuration" do
     before do
       namespace.register Category
