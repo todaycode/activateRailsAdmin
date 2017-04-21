@@ -7,6 +7,7 @@ Active Admin is a Ruby on Rails framework for creating elegant backends for webs
 [![Quality         ](http://img.shields.io/codeclimate/github/activeadmin/activeadmin.svg)      ](https://codeclimate.com/github/activeadmin/activeadmin)
 [![Coverage        ](http://img.shields.io/coveralls/activeadmin/activeadmin.svg)               ](https://coveralls.io/r/activeadmin/activeadmin)
 [![Inch CI         ](http://inch-ci.org/github/activeadmin/activeadmin.svg?branch=master)       ](http://inch-ci.org/github/activeadmin/activeadmin)
+[![Gratipay Team   ](https://img.shields.io/gratipay/team/Active-Admin.svg)](https://gratipay.com/Active-Admin/)
 
 ## State of the project
 
@@ -92,6 +93,12 @@ Ask us in IRC ([#activeadmin](https://webchat.freenode.net/?channels=activeadmin
 
 The [contributing guide](https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md)
 is a good place to start. If you have questions, feel free to ask.
+
+## Want to support us?
+
+You can support us with a weekly tip via [Gratipay](https://gratipay.com).
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.1.3/dist/gratipay.png)](https://gratipay.com/Active-Admin)
 
 ## Dependencies
 
