@@ -50,7 +50,7 @@ The Columns component allows you draw content into scalable columns. All you
 need to do is define the number of columns and the component will take care of
 the rest.
 
-#### Simple Columns
+### Simple Columns
 
 To create simple columnns, use the #columns method. Within the block, call
 the #column method to create a new column.
