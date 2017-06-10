@@ -131,7 +131,7 @@ Each of these actions is available as a constant. Eg: `:read` is available as
 Active Admin provides a helper method to check if the current user is
 authorized to perform an action on a subject.
 
-Simply use the `#authorized?(action, subject) method to check.
+Simply use the `#authorized?(action, subject)` method to check.
 
     ActiveAdmin.register Post do
 
