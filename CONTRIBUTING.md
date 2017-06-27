@@ -62,7 +62,7 @@ directly (`bundle exec rake test`, `bundle exec rake setup`) without Appraisal.
 
 #### 4. Did you find a bug?
 
-* **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/activeadmin/activeadmin/issues).
+* **Ensure the bug was not already reported** by [searching all issues](https://github.com/activeadmin/activeadmin/issues?q=).
 
 * If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/activeadmin/activeadmin/issues/new).
 Be sure to include a **title and clear description**, as much relevant information as possible,
