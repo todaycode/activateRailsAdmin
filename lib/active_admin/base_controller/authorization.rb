@@ -19,7 +19,6 @@ module ActiveAdmin
 
   class BaseController < ::InheritedResources::Base
     module Authorization
-      include MethodOrProcHelper
       extend ActiveSupport::Concern
 
       ACTIONS_DICTIONARY = {
@@ -119,7 +118,7 @@ module ActiveAdmin
       end
 
       def dispatch_active_admin_access_denied(exception)
-        call_method_or_exec_proc active_admin_namespace.on_unauthorized_access, exception
+        instance_exec(self, exception, &active_admin_namespace.on_unauthorized_access.to_proc)
       end
 
       def rescue_active_admin_access_denied(exception)
