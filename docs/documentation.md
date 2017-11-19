@@ -12,7 +12,7 @@ Active Admin is released as a Ruby Gem. The gem is to be installed within a Ruby
 
 ```ruby
 # Gemfile
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin'
 ```
 
 After updating your bundle, run the installer
