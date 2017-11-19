@@ -103,7 +103,6 @@ columns provide :max_width and :min_width options.
 In the above example, the first column will not grow larger than 200px and will
 not shrink less than 100px.
 
-
 ### Custom Column Class
 
 Pass the `:class` option to the column method to set a custom class.
@@ -118,7 +117,6 @@ columns do
   end
 end
 ```
-
 
 ## Table For
 
