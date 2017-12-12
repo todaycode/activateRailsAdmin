@@ -3,6 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe "Breadcrumbs" do
 
   include ActiveAdmin::ViewHelpers
+  include ActionView::Helpers::SanitizeHelper
 
   describe "generating a trail from paths" do
 
