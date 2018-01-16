@@ -7,8 +7,8 @@ taken. By default, '#authorized?' returns true.
 
 ## Setting up your own AuthorizationAdapter
 
-Setting up your own `AuthorizationAdapter` is easy! The following example shows
-how to set up and tie your authorization adapter class to Active Admin:
+The following example shows how to set up and tie your authorization
+adapter class to Active Admin:
 
     # app/models/only_authors_authorization.rb
     class OnlyAuthorsAuthorization < ActiveAdmin::AuthorizationAdapter
@@ -131,7 +131,7 @@ Each of these actions is available as a constant. Eg: `:read` is available as
 Active Admin provides a helper method to check if the current user is
 authorized to perform an action on a subject.
 
-Simply use the `#authorized?(action, subject)` method to check.
+Use the `#authorized?(action, subject)` method to check.
 
     ActiveAdmin.register Post do
 
@@ -177,7 +177,7 @@ Sub-classing `ActiveAdmin::AuthorizationAdapter` is fairly low level. Many times
 it's nicer to have a simpler DSL for managing authorization. Active Admin
 provides an adapter out of the box for [CanCan](https://github.com/ryanb/cancan).
 
-To use the CanCan adapter, simply update the configuration in the Active Admin
+To use the CanCan adapter, update the configuration in the Active Admin
 initializer:
 
     config.authorization_adapter = ActiveAdmin::CanCanAdapter
