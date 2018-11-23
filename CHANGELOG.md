@@ -30,6 +30,8 @@ index download_links: ->{ can?(:view_all_download_links) || [:pdf] }
 
 * Prevents potential DOS attack via Ruby symbols [#1926][] by [@seanlinsley][]
 
+## 1.4.1 [☰](https://github.com/activeadmin/activeadmin/compare/v1.4.0...v1.4.1)
+
 ### Bug Fixes
 
 * Fixes filters for `has_many :through` relationships [#2541][] by [@shekibobo][]
