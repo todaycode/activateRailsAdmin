@@ -25,6 +25,7 @@ coverage
 rdoc
 doc
 .yardoc
+.ruby-version
 pkg
 
 ## PROJECT::SPECIFIC
