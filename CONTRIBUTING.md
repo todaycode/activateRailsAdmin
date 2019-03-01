@@ -114,7 +114,8 @@ To boot the rails console:
 script/local console
 ```
 
-Or to migrate the database:
+Or to migrate the database, if you create a new migration or just play around
+with the db:
 
 ```sh
 script/local rake db:migrate
