@@ -73,12 +73,12 @@ Simply copy the content of the appropriate template into a .rb file, make the ne
 and **paste the content into the issue description**:
   * [**ActiveAdmin** master issues](https://github.com/activeadmin/activeadmin/blob/master/lib/bug_report_templates/active_admin_master.rb)
 
-### 5. Implement your fix or feature
+### Implement your fix or feature
 
 At this point, you're ready to make your changes! Feel free to ask for help;
 everyone is a beginner at first :smile_cat:
 
-### 6. View your changes in a Rails application
+### View your changes in a Rails application
 
 Active Admin is meant to be used by humans, not cucumbers. So make sure to take
 a look at your changes in a browser.
