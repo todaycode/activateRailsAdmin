@@ -56,9 +56,16 @@ If your tests are passing locally but they're failing on Travis, reset your test
 rm -rf spec/rails && bundle update
 ```
 
+<<<<<<< HEAD
 If you find running everything through appraisal too verbose, you can also do
 `export BUNDLE_GEMFILE=gemfiles/rails_50.gemfile` and then run all commands
 directly (`bundle exec rake test`, `bundle exec rake setup`) without Appraisal.
+=======
+**Warning** SCSS assets are aimed to be used indifferently with Sprockets **and** webpacker.
+As such, make sure not to use any sass-rails directives such as `asset-url` or `image-url`.
+
+### Did you find a bug?
+>>>>>>> 338bd33a (Add sass-rails linter to ensure webpacker compatibility)
 
 #### 4. Did you find a bug?
 
