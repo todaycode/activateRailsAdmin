@@ -31,7 +31,11 @@ table.index_table {
     }
 
     &.sortable a {
+<<<<<<< HEAD:app/assets/stylesheets/active_admin/components/_tables.css.scss
       background: url(active_admin_image_path('orderable.png')) no-repeat 0 4px; padding-left: 13px;
+=======
+      background: url($orderable-icon-url) no-repeat 0 4px; padding-left: 13px;
+>>>>>>> 06a349d0 (Embed icons in inline data uri instead of image files):app/assets/stylesheets/active_admin/components/_tables.scss
     }
 
     &.sorted-asc a { background-position: 0 -27px; }
