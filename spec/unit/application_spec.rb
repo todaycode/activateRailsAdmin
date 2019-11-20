@@ -128,6 +128,25 @@ describe ActiveAdmin::Application do
         end
       }.to raise_error("found")
     end
+<<<<<<< HEAD
+=======
+
+    it "should admit both strings and symbols" do
+      expect {
+        application.namespace "admin" do |ns|
+          expect(ns).to eq application.namespaces[:admin]
+          raise "found"
+        end
+      }.to raise_error("found")
+    end
+
+    it "should not pollute the global app" do
+      expect(application.namespaces).to be_empty
+      application.namespace(:brand_new_ns)
+      expect(application.namespaces.names).to eq [:brand_new_ns]
+      expect(ActiveAdmin.application.namespaces.names).to eq [:admin]
+    end
+>>>>>>> e0ac14d0 (Convert namespace to sym to prevent duplicate namespaces (#5931))
   end
 
   describe "#register_page" do

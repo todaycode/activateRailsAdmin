@@ -21,10 +21,19 @@
     end
 ```
 
+<<<<<<< HEAD
 * Accept block for download links [#2040][] by [@potatosalad][]
 ```ruby
 index download_links: ->{ can?(:view_all_download_links) || [:pdf] }
 ```
+=======
+* Convert namespace to sym to prevent duplicate namespaces such as :foo and 'foo'. [#5931] by [@westonganger]
+* Use filter label when condition has a predicate. [#5886] by [@ko-lem]
+* Fix error when routing with array containing symbol. [#5870] by [@jwesorick]
+* Fix error when there is a model named `Tag` and `meta_tags` have been configured. [#5893] by [@micred], [@FabioRos] and [@deivid-rodriguez]
+* Allow specifying custom `input_html` for `DateRangeInput`. [#5867] by [@mirelon]
+* Adjust `#main_content` right margin to take into account possible custom values of `$sidebar-width` and `$section-padding`. [#5887] by [@guigs]
+>>>>>>> e0ac14d0 (Convert namespace to sym to prevent duplicate namespaces (#5931))
 
 ### Security Fixes
 
@@ -1229,6 +1238,7 @@ of the highlights. 250 commits. Enough said.
 [#2541]: https://github.com/activeadmin/activeadmin/issues/2541
 [#2544]: https://github.com/activeadmin/activeadmin/issues/2544
 [#2545]: https://github.com/activeadmin/activeadmin/issues/2545
+<<<<<<< HEAD
 [#2588]: https://github.com/activeadmin/activeadmin/issues/2588
 [#2601]: https://github.com/activeadmin/activeadmin/issues/2601
 [#2744]: https://github.com/activeadmin/activeadmin/issues/2744
@@ -1245,6 +1255,157 @@ of the highlights. 250 commits. Enough said.
 [@ZequeZ]: https://github.com/ZequeZ
 [@adrienkohlbecker]: https://github.com/adrienkohlbecker
 [@ai]: https://github.com/ai
+=======
+[#3038]: https://github.com/activeadmin/activeadmin/issues/3038
+[#3075]: https://github.com/activeadmin/activeadmin/issues/3075
+[#3463]: https://github.com/activeadmin/activeadmin/issues/3463
+[#3464]: https://github.com/activeadmin/activeadmin/issues/3464
+[#3486]: https://github.com/activeadmin/activeadmin/issues/3486
+[#3519]: https://github.com/activeadmin/activeadmin/issues/3519
+[#3535]: https://github.com/activeadmin/activeadmin/issues/3535
+[#3553]: https://github.com/activeadmin/activeadmin/issues/3553
+[#3606]: https://github.com/activeadmin/activeadmin/issues/3606
+[#3686]: https://github.com/activeadmin/activeadmin/issues/3686
+[#3695]: https://github.com/activeadmin/activeadmin/issues/3695
+[#3731]: https://github.com/activeadmin/activeadmin/issues/3731
+[#3783]: https://github.com/activeadmin/activeadmin/issues/3783
+[#3894]: https://github.com/activeadmin/activeadmin/issues/3894
+[#4118]: https://github.com/activeadmin/activeadmin/issues/4118
+[#4173]: https://github.com/activeadmin/activeadmin/issues/4173
+[#4187]: https://github.com/activeadmin/activeadmin/issues/4187
+[#4254]: https://github.com/activeadmin/activeadmin/issues/4254
+[#5043]: https://github.com/activeadmin/activeadmin/issues/5043
+[#5198]: https://github.com/activeadmin/activeadmin/issues/5198
+
+[21b6138f]: https://github.com/activeadmin/activeadmin/pull/5740/commits/21b6138fdcf58cd54c3f1d3f60cb1127b174b40f
+
+[#3091]: https://github.com/activeadmin/activeadmin/pull/3091
+[#3435]: https://github.com/activeadmin/activeadmin/pull/3435
+[#4477]: https://github.com/activeadmin/activeadmin/pull/4477
+[#4731]: https://github.com/activeadmin/activeadmin/pull/4731
+[#4759]: https://github.com/activeadmin/activeadmin/pull/4759
+[#4768]: https://github.com/activeadmin/activeadmin/pull/4768
+[#4848]: https://github.com/activeadmin/activeadmin/pull/4848
+[#4851]: https://github.com/activeadmin/activeadmin/pull/4851
+[#4867]: https://github.com/activeadmin/activeadmin/pull/4867
+[#4870]: https://github.com/activeadmin/activeadmin/pull/4870
+[#4882]: https://github.com/activeadmin/activeadmin/pull/4882
+[#4940]: https://github.com/activeadmin/activeadmin/pull/4940
+[#4950]: https://github.com/activeadmin/activeadmin/pull/4950
+[#4951]: https://github.com/activeadmin/activeadmin/pull/4951
+[#4989]: https://github.com/activeadmin/activeadmin/pull/4989
+[#4996]: https://github.com/activeadmin/activeadmin/pull/4996
+[#4997]: https://github.com/activeadmin/activeadmin/pull/4997
+[#5003]: https://github.com/activeadmin/activeadmin/pull/5003
+[#5029]: https://github.com/activeadmin/activeadmin/pull/5029
+[#5037]: https://github.com/activeadmin/activeadmin/pull/5037
+[#5044]: https://github.com/activeadmin/activeadmin/pull/5044
+[#5046]: https://github.com/activeadmin/activeadmin/pull/5046
+[#5052]: https://github.com/activeadmin/activeadmin/pull/5052
+[#5060]: https://github.com/activeadmin/activeadmin/pull/5060
+[#5069]: https://github.com/activeadmin/activeadmin/pull/5069
+[#5081]: https://github.com/activeadmin/activeadmin/pull/5081
+[#5088]: https://github.com/activeadmin/activeadmin/pull/5088
+[#5093]: https://github.com/activeadmin/activeadmin/pull/5093
+[#5099]: https://github.com/activeadmin/activeadmin/pull/5099
+[#5104]: https://github.com/activeadmin/activeadmin/pull/5104
+[#5119]: https://github.com/activeadmin/activeadmin/pull/5119
+[#5120]: https://github.com/activeadmin/activeadmin/pull/5120
+[#5125]: https://github.com/activeadmin/activeadmin/pull/5125
+[#5137]: https://github.com/activeadmin/activeadmin/pull/5137
+[#5143]: https://github.com/activeadmin/activeadmin/pull/5143
+[#5157]: https://github.com/activeadmin/activeadmin/pull/5157
+[#5167]: https://github.com/activeadmin/activeadmin/pull/5167
+[#5180]: https://github.com/activeadmin/activeadmin/pull/5180
+[#5187]: https://github.com/activeadmin/activeadmin/pull/5187
+[#5194]: https://github.com/activeadmin/activeadmin/pull/5194
+[#5208]: https://github.com/activeadmin/activeadmin/pull/5208
+[#5210]: https://github.com/activeadmin/activeadmin/pull/5210
+[#5223]: https://github.com/activeadmin/activeadmin/pull/5223
+[#5238]: https://github.com/activeadmin/activeadmin/pull/5238
+[#5240]: https://github.com/activeadmin/activeadmin/pull/5240
+[#5251]: https://github.com/activeadmin/activeadmin/pull/5251
+[#5253]: https://github.com/activeadmin/activeadmin/pull/5253
+[#5266]: https://github.com/activeadmin/activeadmin/pull/5266
+[#5272]: https://github.com/activeadmin/activeadmin/pull/5272
+[#5275]: https://github.com/activeadmin/activeadmin/pull/5275
+[#5284]: https://github.com/activeadmin/activeadmin/pull/5284
+[#5295]: https://github.com/activeadmin/activeadmin/pull/5295
+[#5299]: https://github.com/activeadmin/activeadmin/pull/5299
+[#5320]: https://github.com/activeadmin/activeadmin/pull/5320
+[#5324]: https://github.com/activeadmin/activeadmin/pull/5324
+[#5330]: https://github.com/activeadmin/activeadmin/pull/5330
+[#5334]: https://github.com/activeadmin/activeadmin/pull/5334
+[#5336]: https://github.com/activeadmin/activeadmin/pull/5336
+[#5341]: https://github.com/activeadmin/activeadmin/pull/5341
+[#5343]: https://github.com/activeadmin/activeadmin/pull/5343
+[#5357]: https://github.com/activeadmin/activeadmin/pull/5357
+[#5359]: https://github.com/activeadmin/activeadmin/pull/5359
+[#5368]: https://github.com/activeadmin/activeadmin/pull/5368
+[#5370]: https://github.com/activeadmin/activeadmin/pull/5370
+[#5375]: https://github.com/activeadmin/activeadmin/pull/5375
+[#5376]: https://github.com/activeadmin/activeadmin/pull/5376
+[#5399]: https://github.com/activeadmin/activeadmin/pull/5399
+[#5401]: https://github.com/activeadmin/activeadmin/pull/5401
+[#5408]: https://github.com/activeadmin/activeadmin/pull/5408
+[#5413]: https://github.com/activeadmin/activeadmin/pull/5413
+[#5417]: https://github.com/activeadmin/activeadmin/pull/5417
+[#5418]: https://github.com/activeadmin/activeadmin/pull/5418
+[#5433]: https://github.com/activeadmin/activeadmin/pull/5433
+[#5446]: https://github.com/activeadmin/activeadmin/pull/5446
+[#5448]: https://github.com/activeadmin/activeadmin/pull/5448
+[#5453]: https://github.com/activeadmin/activeadmin/pull/5453
+[#5458]: https://github.com/activeadmin/activeadmin/pull/5458
+[#5461]: https://github.com/activeadmin/activeadmin/pull/5461
+[#5464]: https://github.com/activeadmin/activeadmin/pull/5464
+[#5486]: https://github.com/activeadmin/activeadmin/pull/5486
+[#5501]: https://github.com/activeadmin/activeadmin/pull/5501
+[#5504]: https://github.com/activeadmin/activeadmin/pull/5504
+[#5517]: https://github.com/activeadmin/activeadmin/pull/5517
+[#5537]: https://github.com/activeadmin/activeadmin/pull/5537
+[#5555]: https://github.com/activeadmin/activeadmin/pull/5555
+[#5583]: https://github.com/activeadmin/activeadmin/pull/5583
+[#5608]: https://github.com/activeadmin/activeadmin/pull/5608
+[#5611]: https://github.com/activeadmin/activeadmin/pull/5611
+[#5627]: https://github.com/activeadmin/activeadmin/pull/5627
+[#5631]: https://github.com/activeadmin/activeadmin/pull/5631
+[#5632]: https://github.com/activeadmin/activeadmin/pull/5632
+[#5650]: https://github.com/activeadmin/activeadmin/pull/5650
+[#5590]: https://github.com/activeadmin/activeadmin/pull/5590
+[#5662]: https://github.com/activeadmin/activeadmin/pull/5662
+[#5710]: https://github.com/activeadmin/activeadmin/pull/5710
+[#5726]: https://github.com/activeadmin/activeadmin/pull/5726
+[#5738]: https://github.com/activeadmin/activeadmin/pull/5738
+[#5740]: https://github.com/activeadmin/activeadmin/pull/5740
+[#5751]: https://github.com/activeadmin/activeadmin/pull/5751
+[#5758]: https://github.com/activeadmin/activeadmin/pull/5758
+[#5777]: https://github.com/activeadmin/activeadmin/pull/5777
+[#5794]: https://github.com/activeadmin/activeadmin/pull/5794
+[#5800]: https://github.com/activeadmin/activeadmin/pull/5800
+[#5801]: https://github.com/activeadmin/activeadmin/pull/5801
+[#5802]: https://github.com/activeadmin/activeadmin/pull/5802
+[#5811]: https://github.com/activeadmin/activeadmin/pull/5811
+[#5816]: https://github.com/activeadmin/activeadmin/pull/5816
+[#5822]: https://github.com/activeadmin/activeadmin/pull/5822
+[#5826]: https://github.com/activeadmin/activeadmin/pull/5826
+[#5831]: https://github.com/activeadmin/activeadmin/pull/5831
+[#5548]: https://github.com/activeadmin/activeadmin/pull/5548
+[#5842]: https://github.com/activeadmin/activeadmin/pull/5842
+[#5854]: https://github.com/activeadmin/activeadmin/pull/5854
+[#5874]: https://github.com/activeadmin/activeadmin/pull/5874
+[#5877]: https://github.com/activeadmin/activeadmin/pull/5877
+[#5886]: https://github.com/activeadmin/activeadmin/pull/5886
+[#5870]: https://github.com/activeadmin/activeadmin/pull/5870
+[#5893]: https://github.com/activeadmin/activeadmin/pull/5893
+[#5867]: https://github.com/activeadmin/activeadmin/pull/5867
+[#5887]: https://github.com/activeadmin/activeadmin/pull/5887
+[#5931]: https://github.com/activeadmin/activeadmin/pull/5931
+
+[@5t111111]: https://github.com/5t111111
+[@aarek]: https://github.com/aarek
+[@ajw725]: https://github.com/ajw725
+[@alex-bogomolov]: https://github.com/alex-bogomolov
+>>>>>>> e0ac14d0 (Convert namespace to sym to prevent duplicate namespaces (#5931))
 [@amiel]: https://github.com/amiel
 [@ball-hayden]: https://github.com/ball-hayden
 [@bobbytables]: https://github.com/bobbytables
@@ -1320,6 +1481,7 @@ of the highlights. 250 commits. Enough said.
 [@simonoff]: https://github.com/simonoff
 [@snapapps]: https://github.com/snapapps
 [@stereoscott]: https://github.com/stereoscott
+<<<<<<< HEAD
 [@sunny]: https://github.com/sunny
 [@tank-bohr]: https://github.com/tank-bohr
 [@tinynumbers]: https://github.com/tinynumbers
@@ -1333,4 +1495,16 @@ of the highlights. 250 commits. Enough said.
 [@whatcould]: https://github.com/whatcould
 [@yawn]: https://github.com/yawn
 [@yorch]: https://github.com/yorch
+=======
+[@tiagotex]: https://github.com/tiagotex
+[@timoschilling]: https://github.com/timoschilling
+[@TimPetricola]: https://github.com/TimPetricola
+[@varyonic]: https://github.com/varyonic
+[@violeta-p]: https://github.com/violeta-p
+[@WaKeMaTTa]: https://github.com/WaKeMaTTa
+[@wasifhossain]: https://github.com/wasifhossain
+[@westonganger]: https://github.com/westonganger
+[@Wowu]: https://github.com/Wowu
+[@wspurgin]: https://github.com/wspurgin
+>>>>>>> e0ac14d0 (Convert namespace to sym to prevent duplicate namespaces (#5931))
 [@zorab47]: https://github.com/zorab47

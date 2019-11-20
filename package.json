@@ -20,6 +20,17 @@
     "gherkin-lint": "^3.3.3"
   },
   "scripts": {
+<<<<<<< HEAD
     "lint": "gherkin-lint features"
+=======
+    "gherkin-lint": "gherkin-lint",
+    "build": "rollup --config rollup.config.js",
+    "prepublishOnly": "rm -rf src && cp -R app/javascript/active_admin src && cp -R app/assets/stylesheets/active_admin src/scss"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ujs": "^1.2.2"
+>>>>>>> 84d698ce (Run gherkin-lint through yarn)
   }
 }
